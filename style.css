@@ -1,0 +1,18 @@
+.PageView {
+	/*background-color: #cc0726;*/
+}
+
+.PageItem {
+	width: 33%;
+	height: 60vh;
+	border-radius:5px;
+	background-color: #D2B48C;
+	margin: 0 auto;
+	text-align: center;
+	box-shadow: -10px 10px 15px 0px rgba(122,120,122,1);
+}
+
+.PageForm-error {
+	border: 2px solid red;
+	background:red;
+}
