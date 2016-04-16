@@ -1,3 +1,29 @@
+'use strict';
+// Routing: choose what to render based on the string stored in window.location.hash.
+// Handle the initial route
+// navigated()
+
+// console.log(window.location)
+// // Handle browser navigation events
+// window.addEventListener('hashchange', navigated, false);
+
+// function navigated(component) {
+// 		ReactDOM.render(
+//  		React.createElement(PageView, 
+// 			Object.assign({}, state, {
+// 					onPageChange: function(page){
+// 						console.log('on page change being called', page)
+// 						setState({newPage:page})
+// 					},
+// 					onNewPageSubmit: submitNewPage
+// 				})),
+// 	document.getElementById('react-app')
+// 	)
+// }
+
+
+
+
 //create element like this createElement(string/ReactClass type, [object props], [children ...]) -> ReactElement
 // can pass in custom classes as first arg to create element
 
@@ -7,7 +33,9 @@ var PageItem = React.createClass({
 		name: React.PropTypes.string,
 		lyrics: React.PropTypes.string,
 		email: React.PropTypes.string,
-		imageUrl: React.PropTypes.string
+		imageUrl: React.PropTypes.string,
+		trackID: React.PropTypes.string
+
 	},
 	render: function() {
 		return (
@@ -15,9 +43,11 @@ var PageItem = React.createClass({
 				React.createElement('h2', {className: 'PageItem-name'}, this.props.name),
 				React.createElement('div', {style: {backgroundImage: 'url(' + this.props.imageUrl +')', backgroundSize:'100%', backgroundRepeat: 'no-repeat', height: '80%', width:'90%', margin:'0 auto'}}),
 					React.createElement('p', {className:'PageItem-lyrics'}, this.props.lyrics),
-					React.createElement('a', {href: this.props.email}, this.props.email)
+					React.createElement('a', {href: this.props.email}, this.props.email),
+					React.createElement('iframe', {src: 'https://embed.spotify.com/?uri=spotify:track:' + this.props.trackId, style: {frameborder:"0", align:"right", width: "90%", height: "80px"}})
 					)
-				)
+				) 
+		// <iframe src="https://embed.spotify.com/?uri=spotify%3Atrack%3A69NO5gH4OviBD9TFgpFjHP" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>
 	}
 });
 
@@ -116,9 +146,9 @@ var PageView = React.createClass({
 
 
 var pages = [
-{key:1, name: 'Brother Ali', lyrics:'Sexy ass me', email:'forestwhitaker@gmail.com', imageUrl: 'http://i.imgur.com/AAxn9VT.png' },
-{key:2, name: 'Killers', lyrics:'Not a solider', email:'livvahs@gmail.com', imageUrl: 'http://i.imgur.com/ElZWmZM.png'},
-{key:3, name: 'R. Hoof', lyrics:'Under these wild', email:'guitarboy@hotmail.com', imageUrl:'http://i.imgur.com/wOb43ST.png'}
+{key:1, name: 'Brother Ali', lyrics:'Sexy ass me', email:'forestwhitaker@gmail.com', imageUrl: 'http://i.imgur.com/AAxn9VT.png', trackId: '1WPQ1MfGc8KYi4eu0JwjlR' },
+{key:2, name: 'Killers', lyrics:'Not a solider', email:'livvahs@gmail.com', imageUrl: 'http://i.imgur.com/ElZWmZM.png', trackId: '0kYUrLVQOfx21xuXu7OGrT'},
+{key:3, name: 'R. Hoof', lyrics:'Under these wild', email:'guitarboy@hotmail.com', imageUrl:'http://i.imgur.com/wOb43ST.png', trackId:'69NO5gH4OviBD9TFgpFjHP'}
 ];
 
 // var pageItems = pages.map(function(page){
@@ -153,6 +183,7 @@ function setState(changes) {
 	document.getElementById('react-app')
 	)
  }
+
 
 
 setState({pages: pages, newPage: {name:"", email: "", lyrics: "", errors:null}})
