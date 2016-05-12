@@ -1,4 +1,9 @@
-.PageView {
+
+body {
+	background: #78e79f !important;
+}
+
+ .PageView {
 	/*background-color: #cc0726;*/
 }
 
@@ -45,7 +50,7 @@
 }
 
 .wholePage {
-	height: 80vh;
+	height: 70vh;
 	text-align: center;
 	font-family: Dancing Script;
 	color:#7A5230;
@@ -54,6 +59,8 @@
 	bottom:5px;
 	font-size:4em;
 	position:absolute;
+	cursor: pointer;
+	cursor: hand;
 }
 
 .leftArrow {
@@ -65,4 +72,5 @@
 	margin-bottom: 0px;
 	font-family: Source Sans Pro;
 }
+
 

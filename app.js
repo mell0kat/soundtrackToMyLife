@@ -31,7 +31,7 @@ var PageItem = React.createClass({
 	render: function() {
 		return (
 			React.createElement('div', {className:'container PageItem'},
-				React.createElement('div', {className:'row PageItemRow'},
+				React.createElement('div', {className:'row PageItemRow', style:{margin: '3% auto', width:'80%'}},
 					React.createElement('div', {className:'col-xs-6'},
 						React.createElement('p', {className: 'description'}, "These pages were taken from my music 'diary', where I write lyrics that strike me."),
 						React.createElement('img', {className:'leftPage', src: this.props.imageUrl, style: { width:'90%', margin:'2% auto'}}),
@@ -39,12 +39,12 @@ var PageItem = React.createClass({
 					),
 					React.createElement('div', {className:'col-xs-6 rightPageCol'},
 						React.createElement('p', {className: 'description'}, "These photos are either of me or taken by me."),
-						React.createElement('img', {className:'rightPage', src: this.props.myImageUrl, style: { width:'90%', margin:'2% auto', marginTop: '6%'}}),
+						React.createElement('img', {className:'rightPage', src: this.props.myImageUrl, style: { width:'90%', margin:'2% auto'}}),
 						React.createElement('span', {className: 'arrow', onClick: this.moveRight}, '>')
 					)
 				),
 				React.createElement('div', {className:'row'},
-						React.createElement('iframe', {src: 'https://embed.spotify.com/?uri=spotify:track:' + this.props.trackId, style: {frameborder:"0", align:"right", width: "90%", height: "80px"}})
+						React.createElement('iframe', {src: 'https://embed.spotify.com/?uri=spotify:track:' + this.props.trackId, style: {frameborder:"0", align:"right", width: "50%", height: "80px"}})
 					) 
 			)
 		)
@@ -119,6 +119,7 @@ var PageView = React.createClass({
 		return (
 			React.createElement('div', {className: 'wholePage'},
 				React.createElement('h1', {}, 'Soundtrack To My Life'),
+				React.createElement('h3', {style: {fontFamily: 'Source Sans Pro', fontSize: '1.5em'}}, 'Hello Spotify!  Welcome to a partial rendition of the soundtrack to my life.  Please feel free to navigate the pages using the < > buttons.'),
 				React.createElement('div', {className:'PageView-list'}, pageElements)
 			)
 				// React.createElement(PageForm, {value:this.props.newPage,
