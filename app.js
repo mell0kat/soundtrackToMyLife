@@ -1,6 +1,4 @@
 'use strict';
-
-
 //create element like this createElement(string/ReactClass type, [object props], [children ...]) -> ReactElement
 // can pass in custom classes as first arg to create element
 
