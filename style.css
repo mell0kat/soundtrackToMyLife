@@ -2,17 +2,67 @@
 	/*background-color: #cc0726;*/
 }
 
+.PageView-list {
+	height:100%;
+}
+.container {
+	height:100%;
+}
+.row{
+	height:100%;
+}
+.col-xs-6{
+	height:100%;
+	position:relative;
+}
 .PageItem {
-	width: 33%;
-	height: 10em;
+	height: 100%;
 	border-radius:5px;
-	background-color: #D2B48C;
-	margin: 0 auto;
+	margin: 0 10%;
 	text-align: center;
-	box-shadow: -10px 10px 15px 0px rgba(122,120,122,1);
 }
 
+.PageItemRow {
+	background-color: #D2B48C;
+	margin: 5% 10%;
+	box-shadow: -10px 10px 15px 0px rgba(122,120,122,1);
+
+}
+ .leftPage{
+ 	height:88%;
+ }
+ .rightPage{
+ 	height:88%;
+ 	margin-top: 3%;
+
+ }
+ .rightPageCol {
+ 	border-left: thick solid #7A5230;
+ }
 .PageForm-error {
 	border: 2px solid red;
 	background:red;
 }
+
+.wholePage {
+	height: 80vh;
+	text-align: center;
+	font-family: Dancing Script;
+	color:#7A5230;
+}
+.arrow {
+	bottom:5px;
+	font-size:4em;
+	position:absolute;
+}
+
+.leftArrow {
+	left:0px;
+}
+
+.description {
+	margin-top: 2px;
+	margin-bottom: 0px;
+	font-family: Source Sans Pro;
+}
+
